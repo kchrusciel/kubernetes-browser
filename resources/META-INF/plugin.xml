@@ -18,7 +18,9 @@
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+
+    <toolWindow id="Kubernetes Browser" icon="/icons/kubernetes-logo.svg" anchor="right" factoryClass="pl.codecouple.kubernetes.browser.presentation.KubernetesBrowserToolWindowFactory"/>
+
   </extensions>
 
   <actions>
