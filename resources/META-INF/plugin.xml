@@ -14,12 +14,12 @@
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
 
-  <!-- uncomment to enable plugin in all products -->
+  <!-- This plugin is enabled in all products -->
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
 
-    <toolWindow id="Kubernetes Browser" icon="/icons/kubernetes-logo.svg" anchor="right" factoryClass="pl.codecouple.kubernetes.browser.presentation.KubernetesBrowserToolWindowFactory"/>
+    <toolWindow id="Kubernetes Browser" icon="/icons/logos/kubernetes-logo.svg" anchor="right" factoryClass="pl.codecouple.kubernetes.browser.presentation.KubernetesBrowserToolWindowFactory"/>
 
   </extensions>
 
