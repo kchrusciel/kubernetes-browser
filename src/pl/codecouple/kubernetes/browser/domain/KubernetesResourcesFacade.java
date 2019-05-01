@@ -1,8 +1,10 @@
 package pl.codecouple.kubernetes.browser.domain;
 
-import java.util.List;
+import java.util.Set;
 
+import pl.codecouple.kubernetes.browser.domain.dto.ContextDto;
 import pl.codecouple.kubernetes.browser.domain.dto.NamespaceDto;
+import pl.codecouple.kubernetes.browser.domain.dto.PodDto;
 
 public class KubernetesResourcesFacade {
 
@@ -12,8 +14,15 @@ public class KubernetesResourcesFacade {
 		this.kubernetesResourcesProvider = kubernetesResourcesProvider;
 	}
 
-	public List<NamespaceDto> getAllNamespaces() {
+	public Set<NamespaceDto> getAllNamespaces() {
 		return kubernetesResourcesProvider.getAllNamespaces();
 	}
 
+	public Set<ContextDto> getAllContexts() {
+		return kubernetesResourcesProvider.getAllContexts();
+	}
+
+	public Set<PodDto> getAllPods(final NamespaceDto namespace) {
+		return kubernetesResourcesProvider.getAllPods(namespace);
+	}
 }

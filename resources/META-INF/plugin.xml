@@ -19,7 +19,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
 
-    <toolWindow id="Kubernetes Browser" icon="/icons/logos/kubernetes-logo.svg" anchor="right" factoryClass="pl.codecouple.kubernetes.browser.presentation.KubernetesBrowserToolWindowFactory"/>
+    <toolWindow id="Kubernetes Browser" icon="/icons/logos/kubernetes_logo.svg" anchor="right" factoryClass="pl.codecouple.kubernetes.browser.presentation.KubernetesBrowserToolWindowFactory"/>
 
   </extensions>
 
