@@ -6,7 +6,6 @@ import pl.codecouple.kubernetes.browser.presentation.tree.KubernetesTreeNode;
 public class KubernetesContextTreeNode extends KubernetesTreeNode implements KubernetesSelectableTreeNode {
 
 	public static final String MINIKUBE_CONTEXT = "minikube";
-	public static final String SELECTED_CONTEXT_MARKER = "*";
 
 	private final boolean selected;
 

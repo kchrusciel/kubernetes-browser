@@ -11,10 +11,9 @@ import pl.codecouple.kubernetes.browser.domain.KubernetesResourcesFacade;
 public class KubernetesBrowserToolWindowForm {
 
 	public JPanel mainPanel;
+	//TODO add action panel - refresh
 	private JPanel actionsPanel;
 	private JPanel browserPanel;
-
-	private KubernetesBrowserForm kubernetesBrowserForm;
 
 	private final Project project;
 	private final KubernetesResourcesFacade facade;
@@ -26,7 +25,7 @@ public class KubernetesBrowserToolWindowForm {
 	}
 
 	private void rebuild() {
-		kubernetesBrowserForm = new KubernetesBrowserForm(facade);
+		KubernetesBrowserForm kubernetesBrowserForm = new KubernetesBrowserForm(facade, project);
 
 		browserPanel.removeAll();
 		browserPanel.add(kubernetesBrowserForm.getComponent(), BorderLayout.CENTER);

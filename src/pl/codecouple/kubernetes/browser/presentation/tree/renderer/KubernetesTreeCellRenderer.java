@@ -8,11 +8,8 @@ import com.intellij.ui.ColoredTreeCellRenderer;
 
 import pl.codecouple.kubernetes.browser.presentation.icons.KubernetesBrowserPluginIcons;
 import pl.codecouple.kubernetes.browser.presentation.tree.KubernetesSelectableTreeNode;
+import pl.codecouple.kubernetes.browser.presentation.tree.KubernetesTreeNode;
 import pl.codecouple.kubernetes.browser.presentation.tree.context.KubernetesContextTreeNode;
-import pl.codecouple.kubernetes.browser.presentation.tree.namespace.KubernetesNamespaceTreeNode;
-import pl.codecouple.kubernetes.browser.presentation.tree.namespace.KubernetesNamespaceTreeRoot;
-import pl.codecouple.kubernetes.browser.presentation.tree.pod.KubernetesPodTreeNode;
-import pl.codecouple.kubernetes.browser.presentation.tree.pod.KubernetesPodTreeRoot;
 
 public class KubernetesTreeCellRenderer extends ColoredTreeCellRenderer {
 
@@ -21,29 +18,21 @@ public class KubernetesTreeCellRenderer extends ColoredTreeCellRenderer {
 		if(value instanceof KubernetesContextTreeNode) {
 			customizeKubernetesContextTreeNode((KubernetesContextTreeNode) value);
 		}
-		if(value instanceof KubernetesNamespaceTreeNode) {
-			append(((KubernetesNamespaceTreeNode) value).getUserObject().toString());
-		}
-		if(value instanceof KubernetesNamespaceTreeRoot) {
-			append(((KubernetesNamespaceTreeRoot) value).getUserObject().toString());
-		}
-		if(value instanceof KubernetesPodTreeNode) {
-			append(((KubernetesPodTreeNode) value).getUserObject().toString());
-		}
-		if(value instanceof KubernetesPodTreeRoot) {
-			append(((KubernetesPodTreeRoot) value).getUserObject().toString());
-		}
 		if(value instanceof KubernetesSelectableTreeNode) {
 			customizeKubernetesSelectableTreeNode((KubernetesSelectableTreeNode) value);
 		}
+		if(value instanceof KubernetesTreeNode) {
+			customizeKubernetesTreeNode((KubernetesTreeNode) value);
+		}
+	}
+
+	private void customizeKubernetesTreeNode(final KubernetesTreeNode kubernetesTreeNode) {
+		append(kubernetesTreeNode.getUserObject().toString());
 	}
 
 	private void customizeKubernetesSelectableTreeNode(final KubernetesSelectableTreeNode selectableTreeNode) {
-		final String contextName = selectableTreeNode.getName();
 		if(selectableTreeNode.isSelected()) {
-			append(String.format("%s %s", KubernetesContextTreeNode.SELECTED_CONTEXT_MARKER, contextName));
-		} else {
-			append(contextName);
+			append(String.format("%s ", KubernetesContextTreeNode.SELECTED_CONTEXT_MARKER));
 		}
 	}
 

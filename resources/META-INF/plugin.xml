@@ -21,6 +21,8 @@
 
     <toolWindow id="Kubernetes Browser" icon="/icons/logos/kubernetes_logo.svg" anchor="right" factoryClass="pl.codecouple.kubernetes.browser.presentation.KubernetesBrowserToolWindowFactory"/>
 
+    <virtualFileSystem key="k8s" implementationClass="pl.codecouple.kubernetes.browser.presentation.files.KubernetesResourceVirtualFileSystem"/>
+
   </extensions>
 
   <actions>

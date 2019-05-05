@@ -9,7 +9,7 @@ import pl.codecouple.kubernetes.browser.domain.dto.NamespaceDto;
 public class InMemoryDataProvider {
 
 	List<NamespaceDto> getAllNamespaces() {
-		return Arrays.asList(new NamespaceDto("First"), new NamespaceDto("Second"), new NamespaceDto("Thrid"));
+		return Arrays.asList(new NamespaceDto("First", true), new NamespaceDto("Second", false), new NamespaceDto("Thrid", false));
 	}
 
 	List<ContextDto> getAllContexts() {

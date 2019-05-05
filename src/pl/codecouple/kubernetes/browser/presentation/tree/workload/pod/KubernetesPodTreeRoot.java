@@ -1,4 +1,4 @@
-package pl.codecouple.kubernetes.browser.presentation.tree.pod;
+package pl.codecouple.kubernetes.browser.presentation.tree.workload.pod;
 
 import pl.codecouple.kubernetes.browser.presentation.tree.KubernetesTreeNode;
 

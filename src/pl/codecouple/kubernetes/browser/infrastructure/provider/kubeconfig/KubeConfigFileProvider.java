@@ -8,6 +8,8 @@ public class KubeConfigFileProvider {
 	public static final String KUBEDIR = ".kube";
 	public static final String KUBECONFIG = "config";
 
+	private KubeConfigFileProvider() {}
+
 	public static File findConfigInHomeDir() {
 		final File homeDir = findHomeDir();
 		if(homeDir != null) {

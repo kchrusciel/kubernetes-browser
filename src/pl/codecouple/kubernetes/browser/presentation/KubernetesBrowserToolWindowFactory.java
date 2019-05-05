@@ -1,7 +1,5 @@
 package pl.codecouple.kubernetes.browser.presentation;
 
-import java.io.IOException;
-
 import org.jetbrains.annotations.NotNull;
 
 import com.intellij.openapi.project.Project;
@@ -33,12 +31,7 @@ public class KubernetesBrowserToolWindowFactory implements ToolWindowFactory {
 	}
 
 	private KubernetesResourcesProvider getProvider() {
-		try {
-			return new KubernetesResourcesFabric8ioProvider();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-		return null;
+		return new KubernetesResourcesFabric8ioProvider();
 	}
 
 }
